@@ -13,19 +13,19 @@ public class ContaBancaria {
 
    public void depositar(double valor) {
     saldo += valor;
-    transacoes.add(new transacoes("Deposito", valor));
+    transacoes.add(new Transacao("Deposito", valor));
    }
 
    public void sacar(double valor) {
     if (saldo >= valor) {
         saldo -= valor;
-        transacoes.add(new transacoes("Saque", -valor));
+        transacoes.add(new Transacao("Saque", -valor));
     } else {
         System.err.println("Saldo insuficiente");
     }
    }
 
-   public getSaldo() {
+   public double getSaldo() {
     return saldo;
    }
 
